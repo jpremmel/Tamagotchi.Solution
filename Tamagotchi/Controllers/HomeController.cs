@@ -9,13 +9,17 @@ namespace Tamagotchi.Controllers
         public ActionResult Index()
         {
             Pet.ClearList();
-            Pet.PetCount++;
+            if (Pet.PetCount == 0)
+            {
+                Pet.PetCount++;
+            }
             return View();
         }
 
         [HttpPost("/")]
         public ActionResult Create()
         {
+            Pet.PetCount++;
             return RedirectToAction("Index");
         }
 
