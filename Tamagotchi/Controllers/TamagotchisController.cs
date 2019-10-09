@@ -98,6 +98,7 @@ namespace Tamagotchi.Controllers
         [HttpGet("/tamagotchis/newgame")]
         public ActionResult NewGame()
         {
+            Pet.PetCount = 0;
             return View();
         }
     }
