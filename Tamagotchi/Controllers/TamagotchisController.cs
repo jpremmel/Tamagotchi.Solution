@@ -7,7 +7,7 @@ namespace Tamagotchi.Controllers
 {
     public class TamagotchisController : Controller
     {
-        [HttpPost("/tamagotchi")]
+        [HttpPost("/tamagotchis")]
         public ActionResult Index(string name1, string name2, string name3)
         {
             Pet pet1 = new Pet(name1);
@@ -17,10 +17,8 @@ namespace Tamagotchi.Controllers
         }
 
         [HttpPost("/tamagotchis/feed/{i}")]
-        public ActionResult ShowFeed(string n)
+        public ActionResult ShowFeed(int i)
         {
-            Console.WriteLine(">>>>>>>>>>>>>>>>> n = " + n);
-            // int i = int.Parse(n);
             Console.WriteLine(">>>>>>>>>>>>>>>>> i = " + i);
             for (int j = 0; j < Pet.PetsList.Count; j++)
             {

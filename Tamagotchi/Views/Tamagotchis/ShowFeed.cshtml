@@ -17,19 +17,19 @@
                 <ul>
                     <li>Food level: @Model[i].FoodLevel 
                         <form method="post" action="/tamagotchis/feed/{i}"> 
-                            <button type="submit" class="btn btn-success" name={i}>Feed @Model[i].Name</button>
+                            <button type="submit" class="btn btn-success" name="i" value=@i>Feed @Model[i].Name</button>
                         </form>
                     </li>
 
                     <li>Fatigue: @Model[i].Fatigue 
                         <form method="post" action="/tamagotchis/sleep/{i}">
-                            <button type="submit" class="btn btn-success" name={i}>Put @Model[i].Name to sleep</button>
+                            <button type="submit" class="btn btn-success" name="i" value=@i>Put @Model[i].Name to sleep</button>
                         </form>
                     </li>
 
                     <li>Mood: @Model[i].Mood 
                         <form method="post" action="/tamagotchis/play/{i}">
-                            <button type="submit" class="btn btn-success" name={i}>Play with @Model[i].Name</button>
+                            <button type="submit" class="btn btn-success" name="i" value=@i>Play with @Model[i].Name</button>
                         </form>
                     </li>
                 </ul>
