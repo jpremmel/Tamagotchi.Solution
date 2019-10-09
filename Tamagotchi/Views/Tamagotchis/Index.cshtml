@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tamagotchi</title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+        <link href="~/css/styles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Your Pets</h1>
+            <h3>@Model[0].Name </h3>
+            <ul>
+                <li>Food level: @Model[0].FoodLevel</li>
+                <li>Fatigue: @Model[0].Fatigue</li>
+                <li>Mood: @Model[0].Mood</li>
+            </ul>
+            <h3>@Model[1].Name </h3>
+            <ul>
+                <li>Food level: @Model[1].FoodLevel</li>
+                <li>Fatigue: @Model[1].Fatigue</li>
+                <li>Mood: @Model[1].Mood</li>
+            </ul>
+            <h3>@Model[2].Name </h3>
+            <ul>
+                <li>Food level: @Model[2].FoodLevel</li>
+                <li>Fatigue: @Model[2].Fatigue</li>
+                <li>Mood: @Model[2].Mood</li>
+            </ul>
+        </div>
+    </body>
+</html>

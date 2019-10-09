@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 
 namespace Tamagotchi.Models
 {
@@ -7,6 +8,8 @@ namespace Tamagotchi.Models
         public int FoodLevel { get; set; }
         public int Mood { get; set; }
         public int Fatigue { get; set; }
+        public static List<Pet> PetsList = new List<Pet>{};
+
 
         public Pet(string name)
         {
@@ -14,6 +17,7 @@ namespace Tamagotchi.Models
             FoodLevel = 10;
             Mood = 10;
             Fatigue = 10;
+            PetsList.Add(this);
         }
 
         public void Feed()
