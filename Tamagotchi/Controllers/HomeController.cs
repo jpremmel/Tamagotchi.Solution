@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Tamagotchi.Models;
 
 namespace Tamagotchi.Controllers
 {
@@ -7,7 +8,14 @@ namespace Tamagotchi.Controllers
         [HttpGet("/")]
         public ActionResult Index()
         {
+            Pet.PetCount++;
             return View();
+        }
+
+        [HttpPost("/")]
+        public ActionResult Create()
+        {
+            return RedirectToAction("Index");
         }
 
     }

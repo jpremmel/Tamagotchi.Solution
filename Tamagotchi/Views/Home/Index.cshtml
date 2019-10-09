@@ -1,3 +1,6 @@
+@using Tamagotchi.Models;
+@using System.Collections.Generic;
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,34 +16,22 @@
             <form action="/tamagotchis" method="post">
             <h3>Enter your pets' information:</h3>
 
+            @for (int i = 0; i < @Pet.PetCount; i++)
+            {
             <div class=row>
             <div class="col-xs-2 col-xs-offset-4">
-                <label for="name1">Enter your a pet's name:</label>
+                <label for="names">Enter a pet's name:</label>
             </div>
             <div class="col-xs-3">
-                <p><input id="name1" name="name1" type="text" class="form-inline"></p>
+                <p><input id="names" name="names" type="text" class="form-inline"></p>
             </div>
             </div>
-
-            <div class=row>
-            <div class="col-xs-2 col-xs-offset-4">
-                <label for="name2">Enter your second pet's name:</label>
-            </div>
-            <div class="col-xs-3">
-                <p><input id="name2" name="name2" type="text" class="form-inline"></p>
-            </div>
-            </div>
-
-            <div class=row>
-            <div class="col-xs-2 col-xs-offset-4">
-                <label for="name3">Enter your third pet's name:</label>
-            </div>
-            <div class="col-xs-3">
-                <p><input id="name3" name="name3" type="text" class="form-inline"></p>
-            </div>
-            </div>
+            }
 
             <button type="submit" class="btn btn-success">Start Game</button>
+            </form>
+            <form action="/" method="post">
+                <button type="submit" class="btn btn-success">Add another pet</button>
             </form>
         </div>
     </body>

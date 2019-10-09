@@ -8,18 +8,18 @@ namespace Tamagotchi.Controllers
     public class TamagotchisController : Controller
     {
         [HttpPost("/tamagotchis")]
-        public ActionResult Index(string name1, string name2, string name3)
+        public ActionResult Index(List<string> names)
         {
-            Pet pet1 = new Pet(name1);
-            Pet pet2 = new Pet(name2);
-            Pet pet3 = new Pet(name3);
+            foreach(string name in names)
+            {
+                Pet pet = new Pet(name);
+            }
             return View(Pet.PetsList);
         }
 
         [HttpPost("/tamagotchis/feed/{i}")]
         public ActionResult ShowFeed(int i)
         {
-            Console.WriteLine(">>>>>>>>>>>>>>>>> i = " + i);
             for (int j = 0; j < Pet.PetsList.Count; j++)
             {
                 if (j == i)
@@ -37,7 +37,6 @@ namespace Tamagotchi.Controllers
         [HttpPost("/tamagotchis/sleep/{i}")]
         public ActionResult ShowSleep(int i)
         {
-            Console.WriteLine(">>>>>>>>>>>>>>>>> i = " + i);
             for (int j = 0; j < Pet.PetsList.Count; j++)
             { 
                 if (j == i)
@@ -55,7 +54,6 @@ namespace Tamagotchi.Controllers
         [HttpPost("/tamagotchis/play/{i}")]
         public ActionResult ShowPlay(int i)
         {
-            Console.WriteLine(">>>>>>>>>>>>>>>>> i = " + i);
             for (int j = 0; j < Pet.PetsList.Count; j++)
             {
                 if (j == i)
