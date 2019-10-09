@@ -8,6 +8,7 @@ namespace Tamagotchi.Controllers
         [HttpGet("/")]
         public ActionResult Index()
         {
+            Pet.ClearList();
             Pet.PetCount++;
             return View();
         }

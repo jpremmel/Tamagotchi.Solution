@@ -16,7 +16,7 @@
                 <h3>@Model[i].Name </h3>
                 <ul>
                     <li>Food level: @Model[i].FoodLevel 
-                        <form method="post" action="/tamagotchis/feed/{i}"> 
+                        <form class="form-inline" method="post" action="/tamagotchis/feed/{i}"> 
                             <button type="submit" class="btn btn-success" name="i" value=@i>Feed @Model[i].Name</button>
                         </form>
                     </li>

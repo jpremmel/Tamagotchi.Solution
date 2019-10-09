@@ -48,5 +48,23 @@ namespace Tamagotchi.Models
             Mood -= 1;
             FoodLevel -= 1;
         }
+
+        public static void ClearList()
+        {
+            PetsList.Clear();
+        }
+
+        public static bool EndGame()
+        {
+            bool gameOver = false;
+            foreach(Pet pet in PetsList)
+            {
+            if (pet.Fatigue <= 0 || pet.Mood <= 0 || pet.FoodLevel <= 0)
+            {
+                gameOver = true;
+            }
+            }
+            return gameOver;
+        }
     }
 }

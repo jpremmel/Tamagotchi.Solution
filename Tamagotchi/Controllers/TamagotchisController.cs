@@ -31,7 +31,16 @@ namespace Tamagotchi.Controllers
                     Pet.PetsList[j].Ignore();
                 }
             }
-            return View(Pet.PetsList);
+            ActionResult result;
+            if (Pet.EndGame())
+            {
+                result = RedirectToAction("NewGame");
+            }
+            else
+            {
+                result = View(Pet.PetsList);
+            }
+            return result;
         }
 
         [HttpPost("/tamagotchis/sleep/{i}")]
@@ -48,7 +57,16 @@ namespace Tamagotchi.Controllers
                     Pet.PetsList[j].Ignore();
                 }
             }
-            return View(Pet.PetsList);
+             ActionResult result;
+            if (Pet.EndGame())
+            {
+                result = RedirectToAction("NewGame");
+            }
+            else
+            {
+                result = View(Pet.PetsList);
+            }
+            return result;
         }
 
         [HttpPost("/tamagotchis/play/{i}")]
@@ -65,9 +83,22 @@ namespace Tamagotchi.Controllers
                     Pet.PetsList[j].Ignore();
                 }
             }
-            return View(Pet.PetsList);
+             ActionResult result;
+            if (Pet.EndGame())
+            {
+                result = RedirectToAction("NewGame");
+            }
+            else
+            {
+                result = View(Pet.PetsList);
+            }
+            return result;
         }
 
-        
+        [HttpGet("/tamagotchis/newgame")]
+        public ActionResult NewGame()
+        {
+            return View();
+        }
     }
 }
